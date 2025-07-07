@@ -34,8 +34,8 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     strategy:
       matrix:
-        VERSION: ['23.05', '24.10']
-        SET: [docker, non-docker]
+        VERSION: ['24.10']
+        SET: [docker]
 
     steps:
     - name: Checkout
@@ -65,7 +65,7 @@ jobs:
       run: |
         mkdir project
         cd project
-        repo init --depth=1 -u https://github.com/friendlyarm/friendlywrt_manifests -b master-v${{ matrix.VERSION }} \
+        repo init --depth=1 -u https://github.com/Leon-6/friendlywrt_manifests -b master-v${{ matrix.VERSION }} \
                 -m rk3399.xml --repo-url=https://github.com/friendlyarm/repo  --no-clone-bundle
 
         repo sync -c friendlywrt --no-clone-bundle
@@ -143,9 +143,9 @@ jobs:
 
     strategy:
       matrix:
-        VERSION: ['23.05', '24.10']
-        CPU: [rk3328, rk3528, rk3399, rk3566, rk3568, rk3576, rk3588]
-        SET: [docker, non-docker]
+        VERSION: ['24.10']
+        CPU: [rk3328, rk3566]
+        SET: [docker]
     steps:
     - name: Checkout
       uses: actions/checkout@main
