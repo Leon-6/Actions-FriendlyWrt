@@ -46,7 +46,7 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
         sudo rm -rf /etc/apt/sources.list.d
-        wget https://github.com/Leon-6/build-env-on-ubuntu-bionic/blob/master/install.sh
+        wget https://raw.githubusercontent.com/Leon-6/build-env-on-ubuntu-bionic/refs/heads/master/install.sh
         sed -i -e 's/^apt-get -y install openjdk-8-jdk/# apt-get -y install openjdk-8-jdk/g' install.sh
         sed -i -e 's/^\[ -d fa-toolchain \]/# [ -d fa-toolchain ]/g' install.sh
         sed -i -e 's/^(cat fa-toolchain/# (cat fa-toolchain/g' install.sh
@@ -155,7 +155,7 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
         sudo rm -rf /etc/apt/sources.list.d
-        wget https://github.com/Leon-6/build-env-on-ubuntu-bionic/blob/master/install.sh
+        wget https://raw.githubusercontent.com/Leon-6/build-env-on-ubuntu-bionic/refs/heads/master/install.sh
         sed -i -e 's/^apt-get -y install openjdk-8-jdk/# apt-get -y install openjdk-8-jdk/g' install.sh
         sed -i -e 's/^\[ -d fa-toolchain \]/# [ -d fa-toolchain ]/g' install.sh
         sed -i -e 's/^(cat fa-toolchain/# (cat fa-toolchain/g' install.sh
